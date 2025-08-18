@@ -1,12 +1,11 @@
 package com.kd.SalonFlow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -22,5 +21,11 @@ public class Service {
     private String category;
     private boolean active;  //available or unavailable
     private double price;
+
+    @OneToMany(mappedBy = "service")
+    private List<Booking> bookings;
+
+    @OneToMany(mappedBy = "service")
+    private List<Review> reviews;
 
 }
