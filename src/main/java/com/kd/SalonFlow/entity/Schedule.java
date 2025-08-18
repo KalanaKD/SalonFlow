@@ -1,9 +1,6 @@
 package com.kd.SalonFlow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +16,9 @@ public class Schedule {
     private int staffId;
     private String startTime;
     private String endTime;
+
+    @ManyToOne
+    @JoinColumn(name = "staff_id", nullable=false)
+    private Staff staff;
 
 }
