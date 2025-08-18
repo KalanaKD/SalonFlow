@@ -16,4 +16,9 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int bookingId;
+    private int userId;
+    private int staffId;
+    private int serviceId;
+    private int status; //confirm(1) or not(0)
+
 }
