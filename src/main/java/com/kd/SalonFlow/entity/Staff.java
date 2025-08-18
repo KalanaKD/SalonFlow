@@ -17,4 +17,10 @@ public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int staffId;
+    private int userId;
+    private String specialities;
+    private String availableDays;
+    private String availableHours;
+    private String experience;
+
 }
