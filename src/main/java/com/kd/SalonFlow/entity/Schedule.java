@@ -16,4 +16,8 @@ public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int scheduleId;
+    private int staffId;
+    private String startTime;
+    private String endTime;
+
 }
