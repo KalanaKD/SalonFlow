@@ -1,9 +1,6 @@
 package com.kd.SalonFlow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +13,18 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int bookingId;
-    private int userId;
-    private int staffId;
-    private int serviceId;
     private int status; //confirm(1) or not(0)
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable=false)
+    private User userId;
+
+    @ManyToOne
+    @JoinColumn(name = "staff_id", nullable=false)
+    private Staff staffId;
+
+    @ManyToOne
+    @JoinColumn(name = "service_id" , nullable=false)
+    private Service serviceId;
 
 }
