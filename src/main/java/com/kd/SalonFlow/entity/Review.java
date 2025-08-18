@@ -14,9 +14,18 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int reviewId;
-    private int staffId;
-    private int userId;
-    private int serviceId;
     private double rating;
+
+    @ManyToOne
+    @JoinColumn(name = "staff_id", nullable=false)
+    private Staff staffId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable=false)
+    private User userId;
+
+    @ManyToOne
+    @JoinColumn(name = "service_id" , nullable=false)
+    private Service serviceId;
 
 }
