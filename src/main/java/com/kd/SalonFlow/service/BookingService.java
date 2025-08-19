@@ -1,7 +1,11 @@
 package com.kd.SalonFlow.service;
 
-import org.springframework.stereotype.Service;
+import com.kd.SalonFlow.entity.Booking;
+import java.util.List;
 
-@Service
-public class BookingService {
+public interface BookingService {
+    Booking createBooking(Booking booking);
+    Booking updateBookingStatus(int bookingId, int status);
+    List<Booking> getBookingsByUser(int userId);
+    void cancelBooking(int bookingId);
 }
