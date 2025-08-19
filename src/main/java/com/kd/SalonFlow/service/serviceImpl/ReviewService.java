@@ -1,4 +1,4 @@
-package com.kd.SalonFlow.service;
+package com.kd.SalonFlow.service.serviceImpl;
 
 import org.springframework.stereotype.Service;
 
