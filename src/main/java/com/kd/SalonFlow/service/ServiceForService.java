@@ -1,7 +1,4 @@
 package com.kd.SalonFlow.service;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class ServiceForService {
+public interface ServiceForService {
 }
